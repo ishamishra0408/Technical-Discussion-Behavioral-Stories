@@ -11,8 +11,8 @@ Fails here mean a silent context gap discovered mid-drive; do not hand over unti
 - C3 Story briefs present — all 3 summaries, the active story's fuller brief, provenance notes intact.
 - C4 Rubric inline — the active question's qc-eval signals + tasks, verbatim.
 - C5 Skill rows present, filtered to the chosen bucket(s).
-- C6 State snapshot present — progress + current + next from `session.md`.
-- C7 ✅ Before-we-begin present (persona, goal, handoff-only pledge).
+- C6 State snapshot present — progress + current + next from `session.md` — plus the active question's recipe line.
+- C7 ✅ Before-we-begin present (persona, goal, handoff-only pledge) AND the handoff skeleton (fields ≡ G1–G8).
 - C8 ≤80 lines.
 
 ## Gate checks — Flow step 5, on the handoff pasted back from voice

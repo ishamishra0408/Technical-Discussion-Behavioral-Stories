@@ -34,6 +34,7 @@ Grey cases are the point: the boundary is "who authored the fact," not "is it in
 | R1 | 42/80 lines; freedom line present; 0 policing lines; C1–C8 all present | ✅ PASS |
 | R2 | grep: policing phrases only in ops/ history + git history | ✅ PASS |
 | R3 | — | PENDING (spoken probe, next voice session) |
+| T2 | Skeleton-filled handoff → `HANDOFF OK` (8/8 gate checks); skeleton headings did not trip the beyond-handoff auto-fail — skeleton ≡ gate confirmed | ✅ PASS (2026-07-06, post-skeleton fix) |
 
 **Run-1 summary:** 9/9 executable tests behaved as designed; B5 is a documented limitation, not a defect — cross-session fact laundering is caught at answer-write time, not at the gate.
 

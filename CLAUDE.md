@@ -22,9 +22,11 @@ Canonical source of how sessions run. `voice-session.md` is compiled from here +
 3. Story briefs — ALL 3 summaries from `personal-context/stories/` (2 lines each, provenance notes intact); the active story gets the fuller brief. Cross-story angle brainstorming is always possible.
 4. Rubric — `qna/<slug>/qc-eval.md` signals + tasks, verbatim.
 5. Skill rows — `syllabus/ml-swe-collab.md` filtered to the chosen bucket(s).
-6. Recipes/sources — `qna/<slug>/sources.md`, only if the goal needs them.
-7. State snapshot — `session.md` progress + current state + next.
-8. ✅ Before we begin — voice confirms persona, goal, and that it will end with a SESSION HANDOFF block only.
+6. Recipe — the active question's regenerate-recipe line from `qna/<slug>/sources.md`, always (1–2 lines; no judgment call).
+7. Angle rows — when Q2 = "brainstorm angles across all": current angle-scorecard rows from `qna/<slug>/decision-log.md`.
+8. State snapshot — `session.md` progress + current state + next.
+9. ✅ Before we begin — voice confirms persona, goal, and that it will end with a SESSION HANDOFF block only.
+10. Handoff skeleton — a fill-this-exact-shape template whose fields map 1:1 to the Gate checks G1–G8.
 
 Budget: ≤80 lines, scoped by construction — compile only what the goal needs.
 

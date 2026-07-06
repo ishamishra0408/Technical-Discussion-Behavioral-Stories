@@ -36,7 +36,22 @@ Last run: a paraphrase of the earlier baseline draft scored 4/7 — failed signa
 ## State snapshot
 Progress: T1 capture REAL Primavera story ← current · T2 Primavera follow-ups · T3 LetsTransport · T4 Quotr · T5 brainstorm angles per question, pick strongest — all PENDING.
 Tangents: E2E flow test run 1 in progress (spoken probes may occur this session — respond per your contract).
+Recipe (if Primavera context lost): probabilistic sim (not a trained model); weather events w/ duration + persistence; MC ~100 iterations → weather calendar → quantitative risk analysis.
 Next: capture the real account (answer-template sections 1 impact, 2 stakes, 5 failure beats are the gaps), then Claude Code drafts answer v2 and re-runs the eval.
 
 ## ✅ Before we begin
 Confirm in one sentence: your persona, this session's goal (capture the real Primavera account for the trade-off question), and that you will end by outputting a SESSION HANDOFF block only. If you can't state all three, ask before proceeding.
+
+## Handoff skeleton — end the session by filling EXACTLY this shape (nothing else)
+```
+# SESSION HANDOFF
+**Date:** <date> · **Since last:** <one line: what changed this session>
+## Progress
+| # | Task | Status |   ← every task from the snapshot above, exactly one "← current"
+Tangents: <list or "none">
+## Current state
+- Active question: "<question>" → qna/<slug>/ · rubric: <signals+tasks it was graded against>
+- <key outcomes; mark anything for answer.md as Isha's account ONLY if she stated/confirmed it>
+## Next
+<one doable first move — never "continue working">
+```
