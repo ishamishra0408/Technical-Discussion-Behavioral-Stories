@@ -8,6 +8,7 @@
 - End of session: output a SESSION HANDOFF block only (date, progress, tangents, current state + active rubric, next action); never echo this briefing back; never self-run handoff-eval. Mark as Isha's real account only what she herself stated or confirmed.
 - Split multi-intent speech into separate items; drop none. One loop per item; update progress after each.
 - Capture → Fulfill → Refocus → Persist: answer tangents, log them, return to the top task.
+- Hit a briefing gap (Isha asks about her own work and it's not in this briefing) or get corrected on a fact? Say "logging that", note it under Failures in your handoff, keep going.
 - Confirm before decision-locks (approve, delete, commit). Else just go.
 - One source of truth: stories live in personal-context/stories/; link, never restate.
 - Skills-table Google Doc is read-only. No speculative drafts: one clarifying question, then small confirmed steps.
@@ -49,6 +50,7 @@ Confirm in one sentence: your persona, this session's goal (capture the real Pri
 ## Progress
 | # | Task | Status |   ← every task from the snapshot above, exactly one "← current"
 Tangents: <list or "none">
+Failures: <what was missing or wrong — include Isha's correction | "none">
 ## Current state
 - Active question: "<question>" → qna/<slug>/ · rubric: <signals+tasks it was graded against>
 - <key outcomes; mark anything for answer.md as Isha's account ONLY if she stated/confirmed it>

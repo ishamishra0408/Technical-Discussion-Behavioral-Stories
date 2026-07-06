@@ -19,7 +19,7 @@ Fails here mean a silent context gap discovered mid-drive; do not hand over unti
 **Object under test:** a SESSION HANDOFF block and nothing else. If the paste contains anything beyond a handoff block (contract text, briefing echo, rubric rewrite) → **automatic FAIL**.
 - G1 Date + since-last — both present; a dateless handoff fails.
 - G2 Progress table — present; statuses unambiguous; exactly one clear current task; every row from the briefing's snapshot reappears or is explicitly closed.
-- G3 Tangent log — present (empty is fine).
+- G3 Tangent log AND Failures line — both present (either may be "none"). Logged failures never fail the gate; at merge they copy into `session.md` state so the next initiate sees them.
 - G4 Active question + rubric echoed — the question under work and the rubric it was graded against are named (so the merged state stays self-describing).
 - G5 Concrete next action — a doable first move, not "continue working."
 - G6 Fact boundary — anything the handoff marks for `personal-context/` or an `answer.md` as Isha's real account must be Isha-stated (her words or her explicit confirmation). Hypothetical/synthetic discussion content needs no flags and is never a failure.

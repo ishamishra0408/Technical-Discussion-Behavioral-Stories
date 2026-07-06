@@ -4,11 +4,12 @@
 Canonical source of how sessions run. `voice-session.md` is compiled from here + the repo — edit rules here only.
 
 ## Flow (the loop — do not change without explicit instruction)
-1. **Initiate:** user says "initiate". Read `session.md` (state), then ask the §Initiate questions — max 3, skipping any already unambiguous from state; default = continue the last goal.
-2. **Compile:** build `voice-session.md` from the §Compile recipe. Run the Compile checklist (`handoff-eval.md`). All pass → hand it over as a paste-ready block. **The returned handoff is never evaluated at this step.**
-3. **Voice:** user pastes it into Claude voice chat (iOS), converses. Voice enriches (talk + search, no repo access) and ends by outputting a **SESSION HANDOFF block only**.
-4. **Return:** user pastes voice's handoff block back into Claude Code.
-5. **Gate & merge:** run the `handoff-eval.md` Gate checks on the pasted handoff — verdict format lives there, not here. On pass only: merge the handoff into `session.md` (state), commit `session.md` + `voice-session.md`, read the diff back. Merge rule: every progress row from the briefing's snapshot reappears or is explicitly closed.
+1. **Initiate:** user says "initiate". First ask **"What will you work on today?"** → repeat her answer back → she confirms; this locks the session goal. Then read `session.md` (state) and ask the §Initiate questions — max 3, skipping any already unambiguous from the goal or state; default = continue the last goal.
+2. **Manifest confirm:** before compiling, name every file that will feed `voice-session.md` — one line each on its purpose for today's goal (session.md state snapshot · syllabus rows · personal-context stories · qna/<slug>/ files · recipe source). Wait for her explicit "okay". Not okay → adjust, re-confirm. **No okay → no compile, no handoff.**
+3. **Compile:** build `voice-session.md` from the §Compile recipe. Run the Compile checklist (`handoff-eval.md`). All pass → hand it over as a paste-ready block. **The returned handoff is never evaluated at this step.**
+4. **Voice:** user pastes it into Claude voice chat (iOS), converses. Voice enriches (talk + search, no repo access) and ends by outputting a **SESSION HANDOFF block only**.
+5. **Return:** user pastes voice's handoff block back into Claude Code.
+6. **Gate & merge:** run the `handoff-eval.md` Gate checks on the pasted handoff — verdict format lives there, not here. On pass only: merge the handoff into `session.md` (state), commit `session.md` + `voice-session.md`, read the diff back. Merge rule: every progress row from the briefing's snapshot reappears or is explicitly closed.
 
 ## Initiate questions (ask ≤3; derive the rest from state)
 - Q1 Which behavioral question? (list active `qna/` folders; "new" → copy `qna/_template/` to `qna/<slug>/`)
@@ -34,7 +35,7 @@ Budget: ≤80 lines, scoped by construction — compile only what the goal needs
 - `CLAUDE.md` — this file. Router + canonical rules; read by Claude Code only.
 - `session.md` — pure persistent state (progress, tangents, current, next). **Never pasted into voice.** Git = history.
 - `voice-session.md` — GENERATED briefing for one session goal; the only thing pasted into voice. Overwritten each initiate; committed at gate time.
-- `handoff-eval.md` — Compile checklist (step 2) + Gate checks (step 5).
+- `handoff-eval.md` — Compile checklist (step 3) + Gate checks (step 6).
 - `syllabus/` — grading dimensions. `ml-swe-collab.md` — compact DS-vs-SWE rubric (5 buckets / 14 tasks); mirrors the read-only Google Doc.
 - `personal-context/` — Isha-stated facts only (the fact boundary): `resume.md` · `stories/` (single source of truth; summaries now, real accounts pending Tasks 1/3/4).
 - `reference/` — ⚠️ external/unverified research, never facts about Isha: `primavera-weather-teardown.md` · `lidar-examples.md`.
@@ -50,6 +51,7 @@ Budget: ≤80 lines, scoped by construction — compile only what the goal needs
 - →voice Split multi-intent speech into separate items; drop none.
 - →voice One loop per item; update the progress table after each.
 - →voice Capture → Fulfill → Refocus → Persist: answer tangents, log them, return to the top task.
+- →voice Hit a briefing gap (Isha asks about her own work and it's not in this briefing) or get corrected on a fact? Say "logging that", note it under Failures in your handoff, keep going.
 - →voice Confirm before decision-locks (approve, delete, commit). Else just go.
 
 ## Guardrails (hard)

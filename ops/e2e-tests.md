@@ -3,6 +3,44 @@
 
 > ⚠️ **Suite v1 tested the retired v1 flow** (fetch-with-budget → paste session.md → re-stamp gate). Its V2 spoken probe is also **retired by design change** (2026-07-06): synthetic content in discussion is now encouraged, not flagged — see suite v2's R3 for the replacement. V1/V3/V4 spoken probes remain valid.
 
+## Suite v3 — initiate double-confirm (2026-07-06) · NOT YET RUN (awaiting Isha's go)
+Tests CLAUDE.md §Flow steps 1–2: goal question + confirm, then file manifest + explicit "okay", before any compile. Grey cases target the two ambiguities: what counts as a confirmation, and what counts as an okay.
+
+| ID | Type | Trigger / fixture | Expected |
+|----|------|-------------------|----------|
+| I1 | clear | "initiate", nothing else | FIRST output is "What will you work on today?" — no manifest, no compile, no paste block |
+| I2 | fail-trigger | Goal answered; next user message is a tangent, never a confirmation of the echoed goal | Tangent answered (Capture→Fulfill→Refocus), then goal re-confirmed; manifest does NOT appear before the goal confirm |
+| I3 | static | Manifest for goal = "Primavera v2 draft" | Every §Compile input named with a one-line purpose: session.md (state snapshot) · syllabus rows for the chosen bucket · ALL 3 stories (recipe includes 3 summaries by construction; Primavera marked active/fuller) · qna/tradeoff-system-design/ files · sources.md recipe line. Nothing missing, nothing extra |
+| I4 | **grey** | "initiate — today I want Primavera v2" (goal inline) | Goal question may be skipped, but the echo-back + confirmation still happens; manifest waits for it |
+| I5 | **grey** | Manifest response: "okay, but drop the syllabus rows" | Adjusted manifest re-presented; compile only after a clean okay on the NEW manifest — the first "okay" does not carry over |
+| I6 | **grey** | Manifest response is a tangent ("what's FAISS?") | Tangent answered, refocus to manifest, still waiting — a fulfilled tangent is never treated as approval |
+| I7 | **grey** | "Skip the manifest, just give me the paste block" | Manifest still shown (it's one message); her skip-request is logged but the explicit okay is still required — skipping the step is a CLAUDE.md edit, not a runtime override |
+| I8 | fail-trigger | "no" to the manifest, then silence | Nothing compiled: voice-session.md untouched (git status clean), no paste block emitted |
+| I9 | control | Full happy path: initiate → goal → confirm → manifest → "okay" | Compile runs, checklist C1–C8 passes, ≤80 lines, paste block delivered — proves the protocol doesn't over-block |
+
+### Suite v3 results — PENDING (self-tests in Claude Code; no voice session needed)
+| ID | Actual | Verdict |
+|----|--------|---------|
+| I1 | — | PENDING |
+| I2 | — | PENDING |
+| I3 | — | PENDING |
+| I4 | — | PENDING |
+| I5 | — | PENDING |
+| I6 | — | PENDING |
+| I7 | — | PENDING |
+| I8 | — | PENDING |
+| I9 | — | PENDING |
+
+## Suite v4-mini — in-voice failure logging (2026-07-06) · RUN
+Voice logs briefing gaps + fact corrections under a required Failures line; failures ride the handoff into session.md state; gate check G3 covers the line's presence.
+
+| ID | Type | Fixture / probe | Expected | Actual | Verdict |
+|----|------|-----------------|----------|--------|---------|
+| L1 | static | Regenerated voice-session.md | ≤80 lines; Failures line in skeleton; gap rule in contract | 59/80; both present; C1–C8 pass | ✅ PASS |
+| L2 | fail-trigger | Handoff with NO Failures line | Gate FAIL G3 — silence ≠ no failures | `HANDOFF INCOMPLETE` — G3: Failures line missing; fix offered | ✅ PASS (failed correctly) |
+| L3 | grey | Handoff logs "briefing gap: WNS Jenkins work not in briefing" | Gate PASS (failures never fail the gate); failure reaches session.md at merge → next manifest surfaces it | `HANDOFF OK` 8/8; merge simulation puts the WNS line in state where initiate reads it | ✅ PASS |
+| L4 | grey, spoken | Mid-session correction ("it was 300ms, not 3s") | Logged as a failure WITH the correction — not routed to the tangent log | — | PENDING (live session) |
+
 ## Suite v2 — fact boundary + angle scoring (2026-07-06) · NOT YET RUN (awaiting Isha's go)
 Grey cases are the point: the boundary is "who authored the fact," not "is it invented."
 
