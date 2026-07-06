@@ -8,7 +8,7 @@
 Fails here mean a silent context gap discovered mid-drive; do not hand over until all pass.
 - C1 Header: GENERATED marker + a 1-line session goal from the initiate answers.
 - C2 ⚓ Contract + Intent present — all `→voice` lines from CLAUDE.md.
-- C3 Story brief present, with its ⚠️ flags carried over verbatim.
+- C3 Story briefs present — all 3 summaries, the active story's fuller brief, provenance notes intact.
 - C4 Rubric inline — the active question's qc-eval signals + tasks, verbatim.
 - C5 Skill rows present, filtered to the chosen bucket(s).
 - C6 State snapshot present — progress + current + next from `session.md`.
