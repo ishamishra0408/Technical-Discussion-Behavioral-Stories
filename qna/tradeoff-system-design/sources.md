@@ -9,5 +9,3 @@
 | Perplexity Primavera weather-module teardown | Product context: probabilistic sim (not a trained model); weather events with duration + persistence; MC ~100 iterations → weather calendar → quantitative risk analysis. | ⚠️ LLM-generated, unverified. Context only, not a factual claim. |
 | Hello Interview — "AI chatbot story signals" | Reference example of a strong behavioral story's shape (snapshot → stakes → role → actions → results → learnings). | Not Isha's story. Structure template only. |
 | Session architect draft | Origin of the synthetic baseline now in `answer.md`. | ⚠️ Synthetic. |
-
-Peripheral (present but not directly used here): the "How to Become an AI PM" infographic (Aakash Gupta) — PM-framed reframing reference, adjacent to Devansh's search, not this SWE answer.
