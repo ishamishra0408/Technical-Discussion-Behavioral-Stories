@@ -1,6 +1,8 @@
 <!-- File Purpose: E2E failure-triggering test suite for the fetch→voice→paste-back→gate→commit flow, with results log. Fixtures live in the scratchpad, never in the repo. -->
 # e2e-tests.md — flow failure suite
 
+> ⚠️ **Suite v1 tested the retired v1 flow** (fetch-with-budget → paste session.md → re-stamp gate). Flow v2 (initiate → compile voice-session.md → gate & merge) needs a v2 suite after its first real run: Initiate/Compile-stage tests (I/C) replace the F-stage, and G2's Persistent-mutation test becomes the "anything-beyond-a-handoff-block" auto-fail. The V1–V4 spoken probes remain valid as-is.
+
 **Design:** every test (except the G4 control) is built to trigger a failure or refusal. A guardrail that has never rejected anything is untested. Chronological along CLAUDE.md §Flow.
 
 ## Suite

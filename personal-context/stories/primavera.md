@@ -1,1 +1,6 @@
-<!-- File Purpose: Real lived account: Primavera. TODO -->
+<!-- File Purpose: Real lived account: Primavera. ⚠️ Summary only — real account pending Task 1. -->
+# Primavera (Oracle, 2019–21)
+
+**Summary (from resume — true facts):** Monte Carlo risk engine ~40% perf improvement; weather-attributes rules engine (low-level design + implementation); legacy import/export interoperability; Jenkins CI/CD −50% release cycles. Isha owned sim reliability + reusability; an ML owner owned the probabilistic math.
+
+⚠️ The full first-person account (ownership, ML counterpart, real constraint, failure beats) has not been captured yet — that is Task 1. Do not present detail beyond the summary as fact.
