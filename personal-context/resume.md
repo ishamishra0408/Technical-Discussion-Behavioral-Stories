@@ -1,4 +1,4 @@
-<!-- File Purpose: Real facts: resume. TODO -->
+<!-- File Purpose: Real facts: resume. -->
 ## ISHA MISHRA
 **AI Software Engineer** | Palo Alto, CA | +1 (510) 542-7675 | ishamishra041996@gmail.com | LinkedIn | GitHub
 
