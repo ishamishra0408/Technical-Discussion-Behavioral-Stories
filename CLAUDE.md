@@ -4,18 +4,20 @@
 Canonical source of how sessions run. `voice-session.md` is compiled from here + the repo — edit rules here only.
 
 ## Flow (the loop — do not change without explicit instruction)
-1. **Initiate:** user says "initiate". First ask **"What will you work on today?"** → repeat her answer back → she confirms; this locks the session goal. Then read `session.md` (state) and ask the §Initiate questions — max 3, skipping any already unambiguous from the goal or state; default = continue the last goal.
+1. **Initiate:** user says "initiate". Ask exactly 3, in order:
+   - **Q1** Which question do you want to work on today? (list active `qna/` folders; "new" → copy `qna/_template/` to `qna/<slug>/`)
+   - **Q2** Check `qna/<slug>/answer.md`: a real version already written → angle's locked, skip ahead. Nothing real yet → run **project angle exploration** here in Claude Code: brainstorm story×angle candidates across all 3 projects, score each on the low-fidelity scorecard in `qna/<slug>/decision-log.md` (shows the chosen dimension? · narrative strength), pick the strongest, then pull that project's context from across the file map (`personal-context/stories/`, `reference/`, `resume.md`, etc.) for compile.
+   - **Q3** Confirm previous conversation — read `session.md`, summarize progress/current state/next for this question, propose today's goal. She confirms/corrects → locks the goal.
 2. **Manifest confirm:** before compiling, name every file that will feed `voice-session.md` — one line each on its purpose for today's goal (session.md state snapshot · syllabus rows · personal-context stories · qna/<slug>/ files · recipe source). Wait for her explicit "okay". Not okay → adjust, re-confirm. **No okay → no compile, no handoff.**
 3. **Compile:** build `voice-session.md` from the §Compile recipe. Run the Compile checklist (`handoff-eval.md`). All pass → hand it over as a paste-ready block. **The returned handoff is never evaluated at this step.**
 4. **Voice:** user pastes it into Claude voice chat (iOS), converses. Voice enriches (talk + search, no repo access) and ends by outputting a **SESSION HANDOFF block only**.
 5. **Return:** user pastes voice's handoff block back into Claude Code.
 6. **Gate & merge:** run the `handoff-eval.md` Gate checks on the pasted handoff — verdict format lives there, not here. On pass only: merge the handoff into `session.md` (state), commit `session.md` + `voice-session.md`, read the diff back. Merge rule: every progress row from the briefing's snapshot reappears or is explicitly closed.
 
-## Initiate questions (ask ≤3; derive the rest from state)
+## Initiate questions (ask exactly 3)
 - Q1 Which behavioral question? (list active `qna/` folders; "new" → copy `qna/_template/` to `qna/<slug>/`)
-- Q2 Which story — or "brainstorm angles across all"? (Primavera / LetsTransport / Quotr / all)
-- Q3 Which syllabus bucket(s) to grade against? (Reliable / Reusable / Store / Split / Cloud)
-- Q4 (optional) Session type: capture real story · follow-up drill · trade-off sparring.
+- Q2 Project angle exploration — conditional on `qna/<slug>/answer.md` having no real version yet (see Flow §1). Syllabus bucket is not asked here; it stays implicit in that question's `qc-eval.md` scope.
+- Q3 Confirm previous conversation — summarize `session.md` state, propose today's goal, get her confirmation.
 
 ## Compile recipe (answers → voice-session.md sections, in order)
 1. Header: `GENERATED — edit canon sources, not this file` + session goal (1 line from answers).
@@ -24,7 +26,7 @@ Canonical source of how sessions run. `voice-session.md` is compiled from here +
 4. Rubric — `qna/<slug>/qc-eval.md` signals + tasks, verbatim.
 5. Skill rows — `syllabus/ml-swe-collab.md` filtered to the chosen bucket(s).
 6. Recipe — the active question's regenerate-recipe line from `qna/<slug>/sources.md`, always (1–2 lines; no judgment call).
-7. Angle rows — when Q2 = "brainstorm angles across all": current angle-scorecard rows from `qna/<slug>/decision-log.md`.
+7. Angle rows — when project angle exploration ran this session: the resulting scorecard + picked angle from `qna/<slug>/decision-log.md`.
 8. State snapshot — `session.md` progress + current state + next.
 9. ✅ Before we begin — voice confirms persona, goal, and that it will end with a SESSION HANDOFF block only.
 10. Handoff skeleton — a fill-this-exact-shape template whose fields map 1:1 to the Gate checks G1–G8.
