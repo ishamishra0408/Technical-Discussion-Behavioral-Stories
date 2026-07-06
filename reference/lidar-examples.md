@@ -1,7 +1,7 @@
 <!-- File Purpose: ⚠️ Teaching examples from a DIFFERENT project (LiDAR asset-extraction pipeline) — illustrative only, NOT one of Isha's 3 stories. Split out of syllabus/ml-swe-collab.md. -->
 # Skills table — worked examples (LiDAR pipeline)
 
-Concrete plain-language examples behind each rubric term, from a LiDAR asset-extraction pipeline (`span_to_span_matching.py`, `wire_metadata_fetching.py`, pole detection, wire topology, orchestration). Map mentally to your own stories; never present these as your work.
+Concrete plain-language examples behind each rubric term, from a different project — a LiDAR asset-extraction pipeline (`span_to_span_matching.py`, `wire_metadata_fetching.py`, pole detection, wire topology, orchestration). Map to your own stories.
 
 | Rubric term | Plain meaning (LiDAR example) |
 |---|---|

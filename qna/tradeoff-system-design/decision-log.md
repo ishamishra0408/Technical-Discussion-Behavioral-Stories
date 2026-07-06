@@ -1,19 +1,15 @@
 <!-- File Purpose: Story-fit scorecard for this question, then a log of decisions + their basis. -->
 # decision-log.md — "a technical trade-off" question
 
-## Story-fit scorecard (Task 5 — PENDING)
-Which of the three candidate stories best answers "a technical trade-off." Score once all three **real** accounts are captured. Criteria from the session intent.
+## Angle scorecard (Task 5 — PENDING)
+For THIS question, brainstorm candidate story×angle pairs and pick the **strongest angle** (not the best story; same-story rows are fine). Score each angle on how strongly it shows the dimension Isha wants to showcase (e.g. ML-SWE collab) and its narrative strength.
 
-| Criterion | Primavera | LetsTransport | Quotr |
-|-----------|-----------|---------------|-------|
-| Deepest technical trade-off | — | — | — |
-| Strongest ML-SWE collaboration | — | — | — |
-| Highest-stakes outcome | — | — | — |
-| Cleanest narrative arc | — | — | — |
-| **Pick** | | | |
-
-Blocked on: real accounts for Primavera (Task 1), LetsTransport (Task 3), Quotr (Task 4).
-Note: LetsTransport "vehicle classification" is verbal-only / unverified — not in the resume.
+| Story × angle (examples — replace in session) | Shows the chosen dimension? | Narrative strength | Notes / provenance |
+|---|---|---|---|
+| Primavera: fidelity vs runtime/determinism | — | — | |
+| Quotr: hybrid retrieval accuracy vs latency | — | — | |
+| LetsTransport: vehicle classification build-vs-buy | — | — | verbal-only provenance |
+| **Pick (strongest angle)** | | | |
 
 ## Decisions + basis
 | Date | Decision | Basis |

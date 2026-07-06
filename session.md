@@ -11,7 +11,7 @@
 | 2 | Two Primavera follow-ups | PENDING |
 | 3 | LetsTransport: clarify → eval → test → follow-ups | PENDING |
 | 4 | Quotr: clarify → eval → test → follow-ups | PENDING |
-| 5 | Per question: score 3 stories → pick best → craft answer | PENDING |
+| 5 | Per question: brainstorm angles across stories → pick strongest angle → craft answer | PENDING |
 
 Tangents: E2E flow test run 1 in progress — results in ops/e2e-tests.md (suite v1 tested the retired flow; V1–V4 spoken probes still valid).
 

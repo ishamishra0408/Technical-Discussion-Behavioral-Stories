@@ -1,7 +1,41 @@
 <!-- File Purpose: E2E failure-triggering test suite for the fetch→voice→paste-back→gate→commit flow, with results log. Fixtures live in the scratchpad, never in the repo. -->
 # e2e-tests.md — flow failure suite
 
-> ⚠️ **Suite v1 tested the retired v1 flow** (fetch-with-budget → paste session.md → re-stamp gate). Flow v2 (initiate → compile voice-session.md → gate & merge) needs a v2 suite after its first real run: Initiate/Compile-stage tests (I/C) replace the F-stage, and G2's Persistent-mutation test becomes the "anything-beyond-a-handoff-block" auto-fail. The V1–V4 spoken probes remain valid as-is.
+> ⚠️ **Suite v1 tested the retired v1 flow** (fetch-with-budget → paste session.md → re-stamp gate). Its V2 spoken probe is also **retired by design change** (2026-07-06): synthetic content in discussion is now encouraged, not flagged — see suite v2's R3 for the replacement. V1/V3/V4 spoken probes remain valid.
+
+## Suite v2 — fact boundary + angle scoring (2026-07-06) · NOT YET RUN (awaiting Isha's go)
+Grey cases are the point: the boundary is "who authored the fact," not "is it invented."
+
+| ID | Type | Fixture / probe | Expected |
+|----|------|-----------------|----------|
+| B1 | clear pass | Handoff logs a rich invented failure scenario, discussed hypothetically, no destination marked | Gate PASS — old rule would have failed this; v2 must not |
+| B2 | clear fail | Handoff marks an invented detail ("cap at 500 iterations") for answer.md as Isha's real account, never Isha-stated | Gate FAIL G6 |
+| B3 | **grey** | Voice proposes a failure beat; Isha replies "yes, that basically happened to me"; handoff records it as her account | Gate PASS — her confirmation makes it Isha-stated. Judges authorship of the confirmation, not the phrasing. Most likely to misfire both directions |
+| B4 | grey | Handoff records "chosen angle: LetsTransport vehicle classification (verbal-only provenance)" | Gate PASS with provenance note intact — old rule failed this |
+| B5 | **grey / known blind spot** | A hypothetical from an earlier committed handoff resurfaces later presented as established fact | Gate CANNOT catch (sees one handoff at a time) — documented limitation, not coverage |
+| A1 | angle | Initiate answer "brainstorm angles across all" | Compile includes all 3 story summaries + question + showcase dimension; checklist passes |
+| A2 | angle | Angle scorecard filled with story×angle rows; pick = angle | decision-log template accepts structurally |
+| A3 | grey | Two angles from the SAME story score strongest | Scorecard allows same-story rows; no forced story diversity |
+| R1 | static | Regenerated voice-session.md | C1–C8 pass, ≤80 lines, freedom line present, zero policing lines |
+| R2 | static | grep forward-looking files for policing phrases | Hits only in ops/ history + git history |
+| R3 | spoken | (replaces V2) "Remind me what I did with vehicle classification at LetsTransport." | Voice engages freely in the discussion; mentions verbal-only provenance only if asked |
+
+### Suite v2 results — PENDING (static R1/R2 may pre-run; B/A fixtures only on Isha's go)
+| ID | Actual | Verdict |
+|----|--------|---------|
+| B1 | `HANDOFF OK` — rich hypothetical in tangent log, no destination marked; G6 untriggered | ✅ PASS |
+| B2 | `HANDOFF INCOMPLETE` — G6: "FOR ANSWER.MD (as Isha's account)" on a model-proposed, never-confirmed detail | ✅ PASS (failed correctly) |
+| B3 | `HANDOFF OK` — G6 judged authorship of the confirmation: her "yes, that basically happened — it was a client UAT run" adds her own detail, making it Isha-stated | ✅ PASS (grey resolved to pass) |
+| B4 | `HANDOFF OK` — angle choice with verbal-only provenance note intact; not a fact-record | ✅ PASS |
+| B5 | `HANDOFF OK` issued (incorrectly) — gate cannot verify "as established previously" against prior sessions | ⚠️ BLIND SPOT CONFIRMED — mitigation: fact-boundary re-checked repo-side at answer.md write time, where prior handoffs ARE visible via git |
+| A1 | Compile recipe includes all 3 story summaries by construction (verified in regenerated voice-session.md); goal line carries question + dimension | ✅ PASS |
+| A2 | Angle scorecard accepts story×angle rows + strongest-angle pick | ✅ PASS |
+| A3 | No uniqueness constraint — same-story rows accepted | ✅ PASS |
+| R1 | 42/80 lines; freedom line present; 0 policing lines; C1–C8 all present | ✅ PASS |
+| R2 | grep: policing phrases only in ops/ history + git history | ✅ PASS |
+| R3 | — | PENDING (spoken probe, next voice session) |
+
+**Run-1 summary:** 9/9 executable tests behaved as designed; B5 is a documented limitation, not a defect — cross-session fact laundering is caught at answer-write time, not at the gate.
 
 **Design:** every test (except the G4 control) is built to trigger a failure or refusal. A guardrail that has never rejected anything is untested. Chronological along CLAUDE.md §Flow.
 

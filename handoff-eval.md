@@ -22,7 +22,7 @@ Fails here mean a silent context gap discovered mid-drive; do not hand over unti
 - G3 Tangent log — present (empty is fine).
 - G4 Active question + rubric echoed — the question under work and the rubric it was graded against are named (so the merged state stays self-describing).
 - G5 Concrete next action — a doable first move, not "continue working."
-- G6 Synthetic flagged — every invented/unverified item labeled; no invented fact presented as real. (Labeling check, not a truth check.)
+- G6 Fact boundary — anything the handoff marks for `personal-context/` or an `answer.md` as Isha's real account must be Isha-stated (her words or her explicit confirmation). Hypothetical/synthetic discussion content needs no flags and is never a failure.
 - G7 Story facts as pointers — references `personal-context/stories/`, not restated as new claims.
 - G8 Critical path clean — no placeholder blocking the current task; its inputs all present.
 

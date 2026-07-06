@@ -12,14 +12,14 @@ Canonical source of how sessions run. `voice-session.md` is compiled from here +
 
 ## Initiate questions (ask ≤3; derive the rest from state)
 - Q1 Which behavioral question? (list active `qna/` folders; "new" → copy `qna/_template/` to `qna/<slug>/`)
-- Q2 Which story? (Primavera / LetsTransport / Quotr)
+- Q2 Which story — or "brainstorm angles across all"? (Primavera / LetsTransport / Quotr / all)
 - Q3 Which syllabus bucket(s) to grade against? (Reliable / Reusable / Store / Split / Cloud)
 - Q4 (optional) Session type: capture real story · follow-up drill · trade-off sparring.
 
 ## Compile recipe (answers → voice-session.md sections, in order)
 1. Header: `GENERATED — edit canon sources, not this file` + session goal (1 line from answers).
 2. ⚓ Operating Contract + Intent — this file's `→voice` lines.
-3. Story brief — `personal-context/stories/<story>.md` summary (with its ⚠️ flags).
+3. Story briefs — ALL 3 summaries from `personal-context/stories/` (2 lines each, provenance notes intact); the active story gets the fuller brief. Cross-story angle brainstorming is always possible.
 4. Rubric — `qna/<slug>/qc-eval.md` signals + tasks, verbatim.
 5. Skill rows — `syllabus/ml-swe-collab.md` filtered to the chosen bucket(s).
 6. Recipes/sources — `qna/<slug>/sources.md`, only if the goal needs them.
@@ -34,7 +34,7 @@ Budget: ≤80 lines, scoped by construction — compile only what the goal needs
 - `voice-session.md` — GENERATED briefing for one session goal; the only thing pasted into voice. Overwritten each initiate; committed at gate time.
 - `handoff-eval.md` — Compile checklist (step 2) + Gate checks (step 5).
 - `syllabus/` — grading dimensions. `ml-swe-collab.md` — compact DS-vs-SWE rubric (5 buckets / 14 tasks); mirrors the read-only Google Doc.
-- `personal-context/` — true facts only, synthetic-free: `resume.md` · `stories/` (single source of truth; summaries now, real accounts pending Tasks 1/3/4).
+- `personal-context/` — Isha-stated facts only (the fact boundary): `resume.md` · `stories/` (single source of truth; summaries now, real accounts pending Tasks 1/3/4).
 - `reference/` — ⚠️ external/unverified research, never facts about Isha: `primavera-weather-teardown.md` · `lidar-examples.md`.
 - `qna/_template/` — skeletons; a question activates by copying `_template/` to `qna/<slug>/`.
 - `qna/<slug>/` — one folder per ACTIVE question (now: `tradeoff-system-design/`): `answer.md` · `qc-eval.md` · `decision-log.md` · `sources.md`.
@@ -51,7 +51,8 @@ Budget: ≤80 lines, scoped by construction — compile only what the goal needs
 - →voice Confirm before decision-locks (approve, delete, commit). Else just go.
 
 ## Guardrails (hard)
-- →voice Real vs synthetic: flag anything invented; never sell it as Isha's account. `personal-context/` is synthetic-free.
+- →voice Hypothetical & synthetic scenarios are encouraged — that's how concepts get learned. No grounding requirement in discussion.
+- Fact boundary (repo-side): only Isha-stated experiences get recorded in `personal-context/` or an `answer.md` as her real account. Everything else is working material.
 - →voice One source of truth: stories live once in `personal-context/stories/`; elsewhere link, never restate.
 - →voice Skills-table Google Doc is read-only; `syllabus/ml-swe-collab.md` mirrors it.
 - →voice No speculative drafts: one clarifying question, then small confirmed steps.
