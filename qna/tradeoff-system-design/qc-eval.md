@@ -2,7 +2,7 @@
 # qc-eval.md — Answer QC · "a technical trade-off" (Primavera)
 
 **Scores:** `answer.md` — the behavioral answer. NOT the story's factual truth, recency, or metrics.
-**Dimension:** `syllabus/ml-swe-collab.md` (skills table) → **Reliable + Reusable** buckets.
+**Dimension:** `syllabus/ml-swe-collab.md` (skills table) → **Reliable + Reusable** buckets, each row split DS/ML owns vs. SWE owns.
 **Method:** pass/fail per line, no partial credit.
 **Status:** APPROVED / locked. Change the rubric only with a new approval; log the change in `decision-log.md`.
 
@@ -21,21 +21,23 @@ Structure — from `qna/_template/answer.md` (added 2026-07-06; the content sign
 7. **Two concrete failure beats** — two narrated "here's how it would have failed" moments, not a list of mitigations.
 
 ## Task checklist — scoped to Primavera (all 10 must pass)
+Each row must show BOTH sides — what the ML owner defined vs. what you (SWE) built — not just a bucket name.
+
 Reliable
-- [ ] Checkpointing / fault tolerance
-- [ ] Error handling / graceful failure
-- [ ] Logging / monitoring / observability
-- [ ] Reproducibility / containerization
+- [ ] Checkpointing / fault tolerance — ML owner defines what per-client simulation state must survive a crash; you implement checkpoint-and-resume so an overnight crash doesn't lose the run.
+- [ ] Error handling / graceful failure — ML owner defines invalid inputs (e.g. persistence > 1, negative duration) and what should happen to them; you enforce that validation at the service boundary so one bad client input never kills the whole batch.
+- [ ] Logging / monitoring / observability — ML owner defines what a bad simulation run looks like (which outputs are suspect); you log every invocation's inputs/outputs and surface latency/failure metrics so a 3am failure leaves a trail.
+- [ ] Reproducibility / containerization — ML owner defines what "same result" means across clients; you implement seeded RNG, configurable per client, so runs are reproducible.
 
 Reusable
-- [ ] Configuration / parameterization
-- [ ] API / service endpoint
-- [ ] Refactoring / modularization
+- [ ] Configuration / parameterization — ML owner decides which knobs matter (iteration count, seed strategy) and their safe ranges; you expose them as per-client config, not hardcoded.
+- [ ] API / service endpoint — ML owner defines the probability-distribution function's input/output contract; you wrap it in a service layer other systems/clients call.
+- [ ] Refactoring / modularization — ML owner keeps the probabilistic math isolated and versioned; you build the wrapper/module boundary so the math logic isn't duplicated per client.
 
-Primavera-specific
-- [ ] Graceful degradation on bad inputs
-- [ ] Data validation
-- [ ] Observability under load
+Primavera-specific (concrete failure modes the answer must name, not just the bucket)
+- [ ] Graceful degradation on bad inputs — a specific invalid weather attribute or simulation parameter, named, and what happened instead of a crash.
+- [ ] Data validation — the actual rule enforced at the boundary (e.g. persistence ≤ 1), not just "we validated."
+- [ ] Observability under load — a concrete signal (a latency percentile, a failure rate) that surfaced a real problem, not a generic "we had logging."
 
 ## Pass threshold
 All 7 signals pass **AND** all 10 tasks pass → answer is strong, ready for follow-up iteration.
