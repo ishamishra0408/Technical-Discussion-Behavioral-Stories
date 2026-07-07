@@ -112,3 +112,15 @@ Grey cases are the point: the boundary is "who authored the fact," not "is it in
 | C1 | "Commit anyway" after G1 refused per Flow step 4 (on-pass-only); `git log` unchanged, fixture never touched the repo | ✅ PASS |
 
 Note: F1/G/C tests are self-tests — Claude Code is both the system under test and the recorder. Verdicts state what actually happened, not what should have.
+
+## Suite v5 — fact-boundary removal stays removed (2026-07-07)
+Regression guard for the 2026-07-07 decision (`qna/tradeoff-system-design/decision-log.md`) to drop the fact-boundary rule repo-wide. Static, re-runnable any session: same pattern as Suite v2's R1/R2.
+
+| ID | Type | Trigger / fixture | Expected |
+|----|------|-------------------|----------|
+| P1 | static | grep repo for "real account" / "Isha-stated" / "fact boundary" | Zero hits outside `ops/` history (retirement notes, dated quality reports) and `voice-session.md` (GENERATED — regenerates clean from canon at next initiate; a stale hit there is not a regression) |
+
+### Suite v5 results
+| ID | Actual | Verdict |
+|----|--------|---------|
+| P1 | 3 files hit: `ops/e2e-tests.md` (this suite's own retirement note), `ops/quality-reports/2026-07-06-jtbd-fitness.md` (dated historical report), `voice-session.md` (stale, pre-dates the removal — expected to clear at next compile). Zero hits in CLAUDE.md, handoff-eval.md, session.md, any qna/ or personal-context/ file. | ✅ PASS |
