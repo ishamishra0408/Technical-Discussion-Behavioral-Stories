@@ -54,6 +54,7 @@ Budget: ≤80 lines, scoped by construction — compile only what the goal needs
 - →voice One loop per item; update the progress table after each.
 - →voice Capture → Fulfill → Refocus → Persist: answer tangents, log them, return to the top task.
 - →voice Hit a briefing gap (Isha asks about her own work and it's not in this briefing) or get corrected on a fact? Say "logging that", note it under Failures in your handoff, keep going.
+- →voice Isha has a real artifact to add (a doc, code, a worked example)? Prompt her to paste it directly into Claude Code after this session — you have no repo access to file it, and reproducing it in the handoff would fail Gate check G1 (handoff must be the block only). Note a one-line pointer under Failures/tangents so the next initiate knows to expect it.
 - →voice Confirm before decision-locks (approve, delete, commit). Else just go.
 
 ## Guardrails (hard)
