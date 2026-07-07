@@ -3,6 +3,6 @@
 
 | Source | Role here | Flags |
 |--------|-----------|-------|
-| `personal-context/stories/quotr.md` | Canonical story home — RAG system facts (chunking, FAISS, hybrid BM25, >90% grounding, <2s latency) | ⚠️ Summary only; full first-person account pending Task 4 |
+| `personal-context/stories/quotr.md` | Canonical story home — RAG system facts (chunking, FAISS, hybrid BM25, >90% grounding, <2s latency) | Summary-level detail |
 | `personal-context/resume.md` | Resume bullet for the answer's business-impact opener | Verified fact |
 | `syllabus/ml-swe-collab.md` | Grading dimension (Reliable bucket) | — |

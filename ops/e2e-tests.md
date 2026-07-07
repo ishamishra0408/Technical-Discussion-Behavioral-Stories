@@ -2,6 +2,7 @@
 # e2e-tests.md — flow failure suite
 
 > ⚠️ **Suite v1 tested the retired v1 flow** (fetch-with-budget → paste session.md → re-stamp gate). Its V2 spoken probe is also **retired by design change** (2026-07-06): synthetic content in discussion is now encouraged, not flagged — see suite v2's R3 for the replacement. V1/V3/V4 spoken probes remain valid.
+> ⚠️ **Suite v2's B1–B5 and gate check G6 are retired by design change (2026-07-07):** the fact-boundary rule (Isha-stated-only for `answer.md`/`personal-context/`) was removed repo-wide — see `qna/tradeoff-system-design/decision-log.md`. Results below are kept as a historical record of when that gate existed and passed; nothing currently in CLAUDE.md/handoff-eval.md enforces it anymore.
 
 ## Suite v3 — initiate double-confirm (2026-07-06) · NOT YET RUN (awaiting Isha's go)
 Tests CLAUDE.md §Flow steps 1–2: goal question + confirm, then file manifest + explicit "okay", before any compile. Grey cases target the two ambiguities: what counts as a confirmation, and what counts as an okay.

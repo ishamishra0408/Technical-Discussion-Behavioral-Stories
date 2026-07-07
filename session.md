@@ -7,18 +7,17 @@
 ## Progress
 | # | Task | Status |
 |---|---|---|
-| 1 | Capture REAL Primavera story + run eval | PENDING ← current |
-| 2 | Two Primavera follow-ups | PENDING |
-| 3 | LetsTransport: clarify → eval → test → follow-ups | PENDING |
-| 4 | Quotr: clarify → eval → test → follow-ups | PENDING |
-| 5 | Per question: brainstorm angles across stories → pick strongest angle → craft answer | PENDING |
+| 1 | Primavera: fix answer.md structure signals (impact opener, explicit stakes, two failure beats), re-run qc-eval | PENDING ← current |
+| 2 | LetsTransport: draft answer → eval → test → follow-ups | PENDING |
+| 3 | Quotr: draft answer → eval → test → follow-ups | PENDING |
+| 4 | Per question: brainstorm angles across stories → pick strongest angle → craft answer | PENDING |
 
 Tangents: E2E flow test run 1 in progress — results in ops/e2e-tests.md (suite v1 tested the retired flow; V1–V4 spoken probes still valid).
 
 ## Current state
-- **Active question:** "Describe a technical trade-off you made" → qna/tradeoff-system-design/. Story under test: Primavera. Buckets: Reliable + Reusable.
+- **Active question:** "Describe a technical trade-off you made" → qna/tradeoff-system-design/. Story: Primavera. Buckets: Reliable + Reusable.
 - Primavera answer-eval **APPROVED** (7 signals / 10 tasks) → qna/tradeoff-system-design/qc-eval.md.
-- Last qc-eval run: voice paraphrase of the synthetic draft scored 4/7 — failed structure signals (no impact opener, implied stakes, zero failure beats).
+- Last qc-eval run: voice paraphrase of the draft scored 4/7 — failed structure signals (no impact opener, implied stakes, zero failure beats). The draft in answer.md hasn't been re-run against the 7-signal rubric directly yet.
 
 ## Next
-Task 1: capture the real Primavera account in voice (sections 1, 2, 5 of the answer template are the gaps), then generate answer v2 in qna/tradeoff-system-design/answer.md and re-run qc-eval.
+Fix the structure gaps in qna/tradeoff-system-design/answer.md (impact-opener line, explicit stakes, two narrated failure beats), then re-run qc-eval.

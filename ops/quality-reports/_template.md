@@ -11,7 +11,6 @@ One row per job in `ops/jtbd-map.md`. Score each on 4 factors:
 Verdict per job: **OPTIMAL** (all four green) / **ADEQUATE** (works; one factor soft) / **WEAK** (a factor can silently fail) + the single structural fix if not optimal.
 
 ## Kept cross-cutting checks
-- **Fact boundary / zoning** — personal-context/ holds only Isha-stated material; reference/ labeled unverified; nothing model-authored recorded as her account.
 - **Consistency sweep** — grep for stale references and retired concepts outside ops/ history.
 - **Validation status** — for each guardrail: fixture-tested, live-tested, or untested. Rehearsal ≠ production.
 

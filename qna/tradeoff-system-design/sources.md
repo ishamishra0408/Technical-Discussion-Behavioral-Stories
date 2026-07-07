@@ -7,7 +7,7 @@
 | Resume — Oracle / Primavera bullets | Factual anchor: Monte Carlo ~40% perf, weather-attributes rules engine, import/export, Jenkins −50%. | True facts: `personal-context/resume.md`. |
 | Primavera weather-module teardown → `reference/primavera-weather-teardown.md` | Product context: probabilistic sim (not a trained model); weather events with duration + persistence; MC ~100 iterations → weather calendar → quantitative risk analysis. | ⚠️ LLM-generated, unverified. Context only, not a factual claim. |
 | Hello Interview — "AI chatbot story signals" | Reference example of a strong behavioral story's shape (snapshot → stakes → role → actions → results → learnings). | Not Isha's story. Structure template only. |
-| Session architect draft | Origin of the synthetic baseline now in `answer.md`. | ⚠️ Synthetic. |
+| Session architect draft | Origin of the current draft in `answer.md`. | — |
 
 ## Regenerate Primavera context (recipe)
 Perplexity prompt: "snapshot of product and engineering requirements of weather risk module for a product teardown." Expected shape: probabilistic sim (not a trained model); weather events w/ duration + persistence; MC ~100 iterations → weather calendar → quantitative risk analysis. Full snapshot: `reference/primavera-weather-teardown.md`.

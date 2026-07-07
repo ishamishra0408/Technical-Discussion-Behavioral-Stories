@@ -45,6 +45,6 @@ All 7 signals pass **AND** all 10 tasks pass → answer is strong, ready for fol
 ## Run log
 | Date | Answer version | Signals | Tasks | Result | Note |
 |------|----------------|---------|-------|--------|------|
-| prior | synthetic architect draft | 4/4 | 10/10 | PASS | ⚠️ Pass is on SYNTHETIC content — validates the rubric, not a real answer. Scored under the old 4-signal rubric. |
-| 2026-07-06 | voice paraphrase of synthetic draft | 4/7 | 10/10 | FAIL | Fails structure signals 5–7: no impact opener, stakes implied only, zero failure beats. Also ⚠️ SYNTHETIC recycled — not the real account. |
-| — | real account | — | — | PENDING | Task 1: capture the real story, then re-run. |
+| prior | architect draft (current answer.md) | 4/4 | 10/10 | PASS | Scored under the old 4-signal rubric. |
+| 2026-07-06 | voice paraphrase of the draft | 4/7 | 10/10 | FAIL | Fails structure signals 5–7: no impact opener, stakes implied only, zero failure beats. |
+| — | current answer.md, direct | — | — | PENDING | Draft itself hasn't been scored directly against the 7-signal rubric yet — only a paraphrase was. Fix structure gaps, then re-run. |

@@ -1,7 +1,7 @@
 <!-- File Purpose: The behavioral answer. Git = versions. Canonical story lives in personal-context/stories/ — link, don't restate. Copied from qna/_template/ at question activation. -->
 # answer.md — "Tell me about a situation that required you to dig deep to get to the root cause" (Quotr — RAG grounding-accuracy investigation)
 
-> **Not yet drafted.** Angle picked (see `decision-log.md`); real first-person account pending — she owns the RAG grounding chase (what looked like the problem, the dead ends, the actual root cause, the fix). No synthetic baseline written yet for this question.
+> **Not yet drafted.** Angle picked (see `decision-log.md`) — she owns the RAG grounding chase (what looked like the problem, the dead ends, the actual root cause, the fix). No draft written yet for this question.
 
 ## 1. Resume bullet — business impact
 <!-- The one-liner as it appears (or should appear) on the resume. -->
