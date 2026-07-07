@@ -64,6 +64,7 @@ Budget: ≤80 lines, scoped by construction — compile only what the goal needs
 - →voice `syllabus/ml-swe-collab.md` is the source of truth for the DS/SWE rubric — no external doc to mirror.
 - →voice No speculative drafts: one clarifying question, then small confirmed steps.
 - Scope each qna's eval to what that question actually tests.
+- Git workflow (repo-side): work only on `main` — no new session/feature branches. Commit and push directly to `main` each session.
 
 ## Two evals, different objects
 - `handoff-eval.md` — Compile checklist: is the briefing complete before handover? · Gate: is the returned handoff complete enough to merge? (completeness/continuity, NOT accuracy)
