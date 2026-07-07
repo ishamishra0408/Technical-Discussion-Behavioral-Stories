@@ -38,11 +38,11 @@ Budget: ≤80 lines, scoped by construction — compile only what the goal needs
 - `session.md` — pure persistent state (progress, tangents, current, next). **Never pasted into voice.** Git = history.
 - `voice-session.md` — GENERATED briefing for one session goal; the only thing pasted into voice. Overwritten each initiate; committed at gate time.
 - `handoff-eval.md` — Compile checklist (step 3) + Gate checks (step 6).
-- `syllabus/` — grading dimensions. `ml-swe-collab.md` — compact DS-vs-SWE rubric (5 buckets / 14 tasks); mirrors the read-only Google Doc.
+- `syllabus/` — grading dimensions. `ml-swe-collab.md` — compact DS-vs-SWE rubric (5 buckets / 14 tasks, each row split by who owns what); this file is the source of truth.
 - `personal-context/` — Isha-stated facts only (the fact boundary): `resume.md` · `stories/` (single source of truth; summaries now, real accounts pending Tasks 1/3/4).
 - `reference/` — ⚠️ external/unverified research, never facts about Isha: `primavera-weather-teardown.md` · `lidar-examples.md`.
 - `qna/_template/` — skeletons; a question activates by copying `_template/` to `qna/<slug>/`.
-- `qna/<slug>/` — one folder per ACTIVE question (now: `tradeoff-system-design/`): `answer.md` · `qc-eval.md` · `decision-log.md` · `sources.md`.
+- `qna/<slug>/` — one folder per ACTIVE question (now: `tradeoff-system-design/`, `root-cause-debugging/`): `answer.md` · `qc-eval.md` · `decision-log.md` · `sources.md`.
 - `ops/` — system maintenance: `quality-reports/` · `refactor-log.md` · `e2e-tests.md`.
 
 ## Rules
@@ -60,7 +60,7 @@ Budget: ≤80 lines, scoped by construction — compile only what the goal needs
 - →voice Hypothetical & synthetic scenarios are encouraged — that's how concepts get learned. No grounding requirement in discussion.
 - Fact boundary (repo-side): only Isha-stated experiences get recorded in `personal-context/` or an `answer.md` as her real account. Everything else is working material.
 - →voice One source of truth: stories live once in `personal-context/stories/`; elsewhere link, never restate.
-- →voice Skills-table Google Doc is read-only; `syllabus/ml-swe-collab.md` mirrors it.
+- →voice `syllabus/ml-swe-collab.md` is the source of truth for the DS/SWE rubric — no external doc to mirror.
 - →voice No speculative drafts: one clarifying question, then small confirmed steps.
 - Scope each qna's eval to what that question actually tests.
 
