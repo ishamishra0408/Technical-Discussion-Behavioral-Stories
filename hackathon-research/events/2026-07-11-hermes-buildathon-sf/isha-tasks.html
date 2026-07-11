@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hermes — Isha's Checklist</title>
+<style>
+  :root { --ink:#1a1a1a; --paper:#fdfcf8; --accent:#8a3ffc; --soft:#6b6b6b; --line:#d8d4c8; --wash:#f3f0e7; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#e8e6e0; --paper:#191817; --accent:#c8a5ff; --soft:#a09d96; --line:#3a3833; --wash:#242220; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0 auto; max-width:64ch; padding:1.5rem 1.25rem 5rem; background:var(--paper); color:var(--ink);
+         font:17px/1.5 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  h2 { font-size:.95rem; margin:2rem 0 .5rem; text-transform:uppercase; letter-spacing:.08em; color:var(--soft); }
+  .glance { border:2px solid var(--ink); border-radius:10px; padding:1.1rem 1.25rem; }
+  .glance div { padding:.3rem 0; }
+  .glance b { display:inline-block; min-width:9.5ch; color:var(--soft); font-weight:600; font-size:.8rem;
+              text-transform:uppercase; letter-spacing:.05em; }
+  .glance .big { font-size:1.25rem; font-weight:700; }
+  .mentor { background:var(--wash); border-left:5px solid var(--accent); border-radius:0 10px 10px 0;
+            padding:1rem 1.25rem; margin:1rem 0; }
+  .mentor strong { color:var(--accent); }
+  ul.check { list-style:none; padding:0; margin:.25rem 0; }
+  ul.check li { padding:.3rem 0; border-bottom:1px dotted var(--line); }
+  label { display:flex; gap:.6rem; align-items:flex-start; cursor:pointer; }
+  label input { margin-top:.35rem; flex:none; width:1.1rem; height:1.1rem; accent-color:var(--accent); }
+  label input:checked + span { text-decoration:line-through; color:var(--soft); }
+  .why { color:var(--soft); font-size:.85rem; }
+  details { margin:.75rem 0; }
+  summary { cursor:pointer; font-weight:600; }
+  blockquote { border-left:3px solid var(--line); margin:.5rem 0; padding:.4rem .9rem; background:var(--wash);
+               border-radius:0 8px 8px 0; font-size:.9rem; }
+  .progress { position:fixed; bottom:0; left:0; right:0; background:var(--wash); border-top:2px solid var(--ink);
+              padding:.5rem 1rem; font-weight:700; text-align:center; font-size:.9rem; }
+  a { color:var(--accent); }
+  .foot { color:var(--soft); font-size:.85rem; margin-top:2.5rem; }
+  @media print { .progress{display:none} }
+</style>
+</head>
+<body>
+
+<div class="glance">
+  <div><b>Repo</b> <span class="big">Cinnamon/kotaemon</span> (25.5k★) — retrieval pre-built</div>
+  <div><b>You build</b> the seeded eval spine. 2 hours. Spine only.</div>
+  <div><b>Tonight</b> 150 min build · 40 min network · 30 min failure rehearsal</div>
+  <div><b>Handshake</b> "I catch AI's silent failures."</div>
+</div>
+
+<div class="mentor">
+  <strong>You are not walking in alone.</strong> <strong>Ishita Jindal</strong> — YC founder, built Julep (7K★), walked your India→SF path — mentors <strong>all 8 hours</strong>. Your harness measures the exact problem she started her company on. She has every reason to sit with you.<br>
+  <span class="why">Second: Kishan Rao (host, floor all day, LLM-reliability at Rootly). Last: Tosh — only when you're carrying results.</span>
+</div>
+
+<h2>Tonight</h2>
+<ul class="check">
+  <li><label><input type="checkbox" data-k="t0"><span><strong>Text Devansh first</strong> — "Convex/TypeScript? yes/no"</span></label></li>
+  <li><label><input type="checkbox" data-k="t1"><span>Launch Devin brief (in <a href="build-plan.md">build-plan</a>)</span></label></li>
+  <li><label><input type="checkbox" data-k="t2"><span>kotaemon dry-run — &gt;20 min? switch to get-convex/rag <em>tonight</em></span></label></li>
+  <li><label><input type="checkbox" data-k="t3"><span>Gateway cache test — <strong>the riskiest assumption</strong></span></label></li>
+  <li><label><input type="checkbox" data-k="t4"><span>Accounts + keys + docs pre-loaded; fork public with README stub</span></label></li>
+  <li><label><input type="checkbox" data-k="t5"><span>8 golden Q/A pairs (draft — experts amend tomorrow)</span></label></li>
+  <li><label><input type="checkbox" data-k="t6"><span>RAGAS seed diff → screenshot to /evidence</span></label></li>
+  <li><label><input type="checkbox" data-k="t7"><span><strong>Failure rehearsal (30 min):</strong> break it 3 ways, sit with each, say the reframe out loud</span></label></li>
+  <li><label><input type="checkbox" data-k="t8"><span>LinkedIn headline + 4 connect requests + pre-event post</span></label></li>
+  <li><label><input type="checkbox" data-k="t9"><span>Phone: capture template + DM/recap skeletons</span></label></li>
+</ul>
+<p class="why">Rehearsed pain is calm craft. The reframe ("I make the <em>run</em> the unit of reproducibility") only fires tomorrow if you've spoken it tonight.</p>
+
+<h2>Event day</h2>
+<ul class="check">
+  <li><label><input type="checkbox" data-k="e1"><span>First 30 min: judging format? Does a fork count as a build? Tosh staying?</span></label></li>
+  <li><label><input type="checkbox" data-k="e2"><span>Find Ishita at check-in — book her for T+1h. Don't pitch yet</span></label></li>
+  <li><label><input type="checkbox" data-k="e3"><span>Build 2h; screenshot every milestone as it happens</span></label></li>
+  <li><label><input type="checkbox" data-k="e4"><span>8–20 iterations: seam question → apply → show delta → <strong>"Where do I send your before/after — LinkedIn?"</strong> → capture row</span></label></li>
+  <li><label><input type="checkbox" data-k="e5"><span>Rehearse 90-sec demo at 1:50; get it filmed</span></label></li>
+  <li><label><input type="checkbox" data-k="e6"><span>Tosh, late, results open. No job talk. Leaving early? Go now</span></label></li>
+  <li><label><input type="checkbox" data-k="e7"><span>Close: 3–5 peer connects; thank Kishan specifically</span></label></li>
+</ul>
+
+<h2>Weekend (Jul 12–14)</h2>
+<ul class="check">
+  <li><label><input type="checkbox" data-k="c1"><span>Sat AM: DM every capture row — deliver what you promised, no ask</span></label></li>
+  <li><label><input type="checkbox" data-k="c2"><span>README polish — credit experts <strong>by name</strong></span></label></li>
+  <li><label><input type="checkbox" data-k="c3"><span>CI gate + regressing PR → screenshot the red X</span></label></li>
+  <li><label><input type="checkbox" data-k="c4"><span>Sun: recap post (thread on pre-event post, earned tags only)</span></label></li>
+  <li><label><input type="checkbox" data-k="c5"><span>Comment on 5–10 peer recaps; log story material into prep repo</span></label></li>
+</ul>
+
+<h2>Weeks 1–4</h2>
+<ul class="check">
+  <li><label><input type="checkbox" data-k="d1"><span>Ladder per person: DM → engage → W1–2 call (their-domain question) → they ask "what's next?" → then job search</span></label></li>
+  <li><label><input type="checkbox" data-k="d2"><span>Most realistic referral: <strong>Kishan → Okta, W3–4</strong>. Ishita → hire/YC intros. Tosh → intro, never a referral ask</span></label></li>
+  <li><label><input type="checkbox" data-k="d3"><span>Draft root-cause answer ("initiate"); fold reps into Primavera gaps</span></label></li>
+  <li><label><input type="checkbox" data-k="d4"><span>Resume line + RAGAS upstream issue + 3-min demo kept runnable</span></label></li>
+</ul>
+
+<details>
+<summary>If things go wrong</summary>
+<ul>
+  <li><strong>Build fails</strong> → demo the RAGAS diff + design; failure writeup is MORE citable in reliability circles — it's your brand.</li>
+  <li><strong>Tosh absent</strong> → Wayne + double-Kishan; ask Kishan/GrowthX to forward the recap to him.</li>
+  <li><strong>Ishita absent</strong> → Kishan becomes anchor 1; DM her the prepped question after.</li>
+  <li><strong>Devansh mismatch</strong> → static results table; ask Wayne to sanity-check the Convex schema (better conversation anyway).</li>
+  <li><strong>Silence by W2</strong> → artifacts go into cold applications; interviews and stories never depended on replies.</li>
+</ul>
+</details>
+
+<details>
+<summary>Skeletons (copy to phone)</summary>
+<blockquote><strong>DM:</strong> [Name] — your [suggestion] at Hermes moved my [metric] X→Y. Promised you the before/after: [link]. Writeup with you credited: [repo].</blockquote>
+<blockquote><strong>Recap:</strong> RAGAS's seed=42 seeds numpy — never the judge LLM. Scores change every run, nothing tells you. [diff] At Hermes I built the missing spine on kotaemon: seeded runs, run-hashes, a variance gate that fails the eval when the eval is unreliable. [clip] N expert iterations live — [Name]'s idea moved recall X→Y. Repo: [link]. Where does determinism start costing sensitivity?</blockquote>
+</details>
+
+<p class="foot">Depth lives in <a href="isha-tasks.md">isha-tasks.md</a> (why + dependencies per task) · <a href="report.md">report.md</a> (people, sources, RAT) · <a href="build-plan.md">build-plan.md</a> (timings, Devin brief, demo beats).</p>
+
+<div class="progress" id="bar">0 / 0 done</div>
+
+<script>
+  const KEY = "hermes-tasks-v2";
+  const saved = JSON.parse(localStorage.getItem(KEY) || "{}");
+  const boxes = document.querySelectorAll("input[type=checkbox]");
+  function refresh() {
+    const done = [...boxes].filter(b => b.checked).length;
+    document.getElementById("bar").textContent = done + " / " + boxes.length + " done" + (done === boxes.length ? " 🎉" : "");
+  }
+  boxes.forEach(b => {
+    b.checked = !!saved[b.dataset.k];
+    b.addEventListener("change", () => {
+      saved[b.dataset.k] = b.checked;
+      localStorage.setItem(KEY, JSON.stringify(saved));
+      refresh();
+    });
+  });
+  refresh();
+</script>
+</body>
+</html>
